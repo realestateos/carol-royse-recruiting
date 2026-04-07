@@ -35,7 +35,6 @@
     .gradient-text { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
     .stat-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-    .testimonial-card { background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
@@ -51,7 +50,7 @@
           <span class="font-bold text-xl text-gray-900">Carol Royse Team</span>
         </div>
         <button onclick="openModal()" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-lg font-semibold transition cursor-pointer">
-          Apply Now
+          See If I Qualify
         </button>
       </div>
     </div>
@@ -73,23 +72,17 @@
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
           Only 5% Of Real Estate Agents Make $100K A Year… 
-          <span class="text-brand-400">We Guarantee You'll Be One Of Them</span>
+          <span class="text-brand-400">I Guarantee You'll Be One Of Them, Or I'll Pay You The Difference</span>
         </h1>
         
-        <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-          Join Carol Royse Team and earn six figures within your first 12 months—or we'll pay you the difference. 
-          No cold calling. No marketing costs. Just pre-qualified appointments ready to close.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <button onclick="openModal()" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center gap-2 cursor-pointer">
             <i class="fas fa-rocket"></i>
-            See If You're A Fit
+            See If I Qualify
           </button>
-          <a href="#how-it-works" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-semibold text-lg transition">
-            Learn More
-          </a>
         </div>
+        
+        <p class="text-lg text-gray-300">See if our team is the right fit for you</p>
       </div>
     </div>
   </section>
@@ -100,11 +93,11 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div class="stat-card rounded-2xl p-6">
           <div class="text-4xl md:text-5xl font-bold text-brand-400 mb-2">95%</div>
-          <p class="text-gray-400 text-sm">of agents never make $100K/year</p>
+          <p class="text-gray-400 text-sm">of real estate agents will never make $100,000 in a year</p>
         </div>
         <div class="stat-card rounded-2xl p-6">
           <div class="text-4xl md:text-5xl font-bold text-brand-400 mb-2">80%</div>
-          <p class="text-gray-400 text-sm">leave the industry in 5 years</p>
+          <p class="text-gray-400 text-sm">of agents will leave the industry within five years</p>
         </div>
         <div class="stat-card rounded-2xl p-6">
           <div class="text-4xl md:text-5xl font-bold text-brand-400 mb-2">#1</div>
@@ -124,50 +117,81 @@
       <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Most Real Estate Agents Will Never Reach Six Figures</h2>
         <p class="text-lg text-gray-600">
-          Not because they aren't good at what they do. Not because they don't work hard. 
-          But because they are stuck in a broken system that forces them to spend their time chasing leads instead of closing deals.
+          Not because they aren't good at what they do. Not because they don't work hard. But because they are stuck in a broken system that forces them to spend their time chasing leads instead of closing deals. The reality?
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
-          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-chart-line-down text-red-600 text-xl"></i>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Unpredictable Income</h3>
-          <p class="text-gray-600 text-sm">One month you're flush with commissions, the next you're scrambling for your next deal.</p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-8">
+          <h3 class="font-bold text-xl text-red-700 mb-4">Most agents waste hours every day:</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-times text-red-500 mt-1"></i>
+              <span><strong>Unpredictable income.</strong> One month you're flush with commissions, the next you're scrambling for your next deal.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-times text-red-500 mt-1"></i>
+              <span><strong>Endless prospecting.</strong> Cold calls, door knocking, open houses—none of which guarantee results.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-times text-red-500 mt-1"></i>
+              <span><strong>Marketing expenses that eat into profits.</strong> Every ad, every lead gen tool, every piece of direct mail comes out of your pocket.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-times text-red-500 mt-1"></i>
+              <span><strong>Burnout.</strong> You're always on—weekends, evenings, and every spare moment, hoping to land your next client.</span>
+            </li>
+          </ul>
         </div>
-        
-        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
-          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-phone-slash text-red-600 text-xl"></i>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Endless Prospecting</h3>
-          <p class="text-gray-600 text-sm">Cold calls, door knocking, open houses—none of which guarantee results.</p>
-        </div>
-        
-        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
-          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-dollar-sign text-red-600 text-xl"></i>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Marketing Expenses</h3>
-          <p class="text-gray-600 text-sm">Every ad, every lead gen tool, every piece of direct mail comes out of your pocket.</p>
-        </div>
-        
-        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
-          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-fire text-red-600 text-xl"></i>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Burnout</h3>
-          <p class="text-gray-600 text-sm">You're always on—weekends, evenings, and every spare moment, hoping to land your next client.</p>
+
+        <div class="bg-brand-50 border border-brand-100 rounded-2xl p-8">
+          <h3 class="font-bold text-xl text-brand-700 mb-4">You got into real estate because you wanted:</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check text-brand-600 mt-1"></i>
+              <span>Financial freedom</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check text-brand-600 mt-1"></i>
+              <span>Flexibility</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check text-brand-600 mt-1"></i>
+              <span>A better life for your family</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-gray-600 italic">But for most agents, that dream is quickly replaced by the harsh reality...</p>
         </div>
       </div>
 
-      <div class="mt-12 text-center">
-        <p class="text-xl text-gray-700 font-medium">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="text-xl text-gray-700 mb-4">
           This is why most agents never break past the $50K–$75K range and why so many leave the industry altogether.
         </p>
-        <p class="text-2xl font-bold text-brand-600 mt-4">But it's not how we do business…</p>
+        <p class="text-2xl font-bold text-brand-600">But it's not how we do business…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial 1 -->
+  <section class="py-16 bg-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+        <div class="text-brand-400 text-4xl mb-6">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote class="text-2xl md:text-3xl text-white mb-6 italic leading-relaxed">
+          "I easily sell over 5 homes a month and make over $250,000 a year. The system really kind of showed me how I can be successful in real estate the right way without having to do all this like jumping through hoops and crazy stuff. If I had listened to the people telling me 'don't do it,' who knows where I'd be right now."
+        </blockquote>
+        <div class="flex items-center justify-center gap-4">
+          <div class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center">
+            <i class="fas fa-user text-white"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-white">Frank Fusaro</p>
+            <p class="text-gray-400 text-sm">Top Producer, Carol Royse Team</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -178,139 +202,218 @@
       <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Sell More Homes, Earn More Money, and Stop Chasing Cold Leads</h2>
         <p class="text-lg text-gray-600">
-          At Carol Royse Team, our agents don't waste time calling or chasing low-quality leads or spending money on marketing. 
-          We hand you pre-qualified buyer and seller appointments daily.
+          At Carol Royse Team, our agents don't waste time on calling or chasing low-quality leads or spending money on marketing. We hand you pre-qualified buyer and seller appointments daily—clients who are serious, motivated, and ready to move forward.
+        </p>
+        <p class="text-gray-600 mt-4">
+          These appointments are set by our inside sales department and handed to you to meet with at their homes to list their homes for sale. Instead of spending your time prospecting, you spend it closing deals.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-16">
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-calendar-check text-brand-600 text-2xl"></i>
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-12">
+        <h3 class="text-2xl font-bold text-center mb-8">What does this mean for you?</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-fire text-brand-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">A full pipeline of hot, pre-screened buyers and sellers</h4>
+              <p class="text-gray-600 text-sm">So you never have to worry about where your next deal is coming from.</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-4">Pre-Qualified Appointments</h3>
-          <p class="text-gray-600">
-            Our inside sales team sets appointments with motivated buyers and sellers. 
-            You meet with clients who are serious, qualified, and ready to move forward.
-          </p>
-        </div>
-        
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-hand-holding-dollar text-brand-600 text-2xl"></i>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-dollar-sign text-brand-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">No marketing, advertising, or lead generation costs</h4>
+              <p class="text-gray-600 text-sm">We cover it all, so you don't waste a cent trying to attract new clients.</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-4">Zero Marketing Costs</h3>
-          <p class="text-gray-600">
-            We handle all lead generation and marketing. You don't spend a dime on advertising—
-            you keep more of what you earn.
-          </p>
-        </div>
-        
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-graduation-cap text-brand-600 text-2xl"></i>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-graduation-cap text-brand-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">Structured, ongoing training and support</h4>
+              <p class="text-gray-600 text-sm">We don't just throw you into the deep end. We give you everything you need to succeed.</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-4">Elite Training & Support</h3>
-          <p class="text-gray-600">
-            Get ongoing mentorship from top producers. From negotiating offers to handling objections, 
-            we set you up for success.
-          </p>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-chart-line text-brand-600 text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">The path to a consistent, predictable income</h4>
+              <p class="text-gray-600 text-sm">Without feast-or-famine cycles.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h3 class="text-2xl md:text-3xl font-bold mb-4">What does this mean for you?</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle text-brand-600 text-xl mt-0.5"></i>
-                <span class="text-gray-700">You never cold call or chase leads</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle text-brand-600 text-xl mt-0.5"></i>
-                <span class="text-gray-700">The clients you meet with are ready to move forward</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle text-brand-600 text-xl mt-0.5"></i>
-                <span class="text-gray-700">You don't spend a dime on marketing or advertising</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle text-brand-600 text-xl mt-0.5"></i>
-                <span class="text-gray-700">You have ongoing training and mentorship</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle text-brand-600 text-xl mt-0.5"></i>
-                <span class="text-gray-700 font-semibold">You have a guaranteed six-figure income</span>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1 text-center md:text-right">
-            <div class="bg-brand-50 rounded-2xl p-8 inline-block">
-              <div class="text-5xl font-bold text-brand-600 mb-2">1,000+</div>
-              <p class="text-gray-700 font-medium">Motivated buyers & sellers contact our office every month</p>
+      <div class="text-center">
+        <p class="text-lg text-gray-600 mb-8">
+          This isn't theory. It's a proven, repeatable system that has made us <span class="font-bold text-brand-600">Arizona's #1 Real Estate Team</span>.
+        </p>
+        <button onclick="openModal()" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition inline-flex items-center gap-2 cursor-pointer">
+          <i class="fas fa-rocket"></i>
+          See If I Qualify
+        </button>
+        <p class="text-gray-500 mt-4">See if our team is the right fit for you</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">How Many Homes Could You Sell If You Had a Full Calendar of Ready-to-Go Appointments?</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          Picture this… You walk into the office. Instead of spending your morning cold calling or worrying about your next deal, you check your schedule. Your day is already booked with pre-qualified buyers and sellers.
+        </p>
+        <div class="flex justify-center gap-6 text-gray-600 font-medium">
+          <span>No dead-end leads.</span>
+          <span>No marketing headaches.</span>
+          <span>No wasted time.</span>
+        </div>
+        <p class="text-lg text-gray-600 mt-6">
+          Just serious, motivated clients who are ready to buy or sell. Instead of chasing leads, you're negotiating contracts, writing offers, and making money.
+        </p>
+        <p class="text-xl font-bold text-brand-600 mt-6">
+          At Carol Royse Team, this is what every day looks like for our agents.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiators Section -->
+  <section class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">What Sets Carol Royse Team Apart?</h2>
+        <p class="text-lg text-gray-300">
+          Most real estate teams/brokerages promise leads. We provide <span class="font-bold text-brand-400">appointments</span>. There's a massive difference.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto mb-12">
+        <p class="text-gray-300 text-lg text-center mb-8">
+          We don't hand our agents leads. Our team generates over 1,000 motivated buyers and sellers every month contacting our office—our inside sales team automatically sifts and sorts the buyers and sellers who are looking to make a move now and books an appointment with these motivated buyers and sellers to meet with our real estate agents and we pass them directly to you.
+        </p>
+        
+        <p class="text-white font-bold text-xl text-center mb-8">This means:</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-check-circle text-brand-400 text-xl"></i>
+              <h4 class="font-bold">You never cold call or chase leads</h4>
             </div>
+            <p class="text-gray-400 text-sm">The clients you meet with are ready to move forward.</p>
+          </div>
+          
+          <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-check-circle text-brand-400 text-xl"></i>
+              <h4 class="font-bold">You don't spend a dime on marketing or advertising</h4>
+            </div>
+            <p class="text-gray-400 text-sm">We handle it all, so you keep more of what you earn.</p>
+          </div>
+          
+          <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-check-circle text-brand-400 text-xl"></i>
+              <h4 class="font-bold">You have ongoing training and mentorship</h4>
+            </div>
+            <p class="text-gray-400 text-sm">Whether you're negotiating offers or handling objections, we set you up for success.</p>
+          </div>
+          
+          <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-check-circle text-brand-400 text-xl"></i>
+              <h4 class="font-bold">You have a guaranteed six-figure income</h4>
+            </div>
+            <p class="text-gray-400 text-sm">If you don't make $100K in your first 12 months, I'll pay you the difference personally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-300 mb-2">This is not the traditional real estate model.</p>
+        <p class="text-white font-bold text-xl mb-8">This is a system designed for top-producing agents who are ready to level up.</p>
+        <button onclick="openModal()" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition inline-flex items-center gap-2 cursor-pointer">
+          <i class="fas fa-rocket"></i>
+          See If I Qualify
+        </button>
+        <p class="text-gray-500 mt-4">See if our team is the right fit for you</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial 2 -->
+  <section class="py-16 bg-brand-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+        <div class="text-brand-600 text-4xl mb-6">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote class="text-xl md:text-2xl text-gray-900 mb-6 italic leading-relaxed">
+          "I sell 80+ homes per year—financially, it's completely changed my life. Being on a successful team that does everything for you, and all you literally have to do is go out and sell a house to a client… it's unlimited, man. Take your ego out—it's not about your face being on a sign. It's about how much you can provide for your family and how much of your dreams can you make come true. It's a life changer."
+        </blockquote>
+        <div class="flex items-center justify-center gap-4">
+          <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-user text-brand-600"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-gray-900">Joe Turcone</p>
+            <p class="text-gray-500 text-sm">Top Producer, Carol Royse Team</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Differentiators Section -->
+  <!-- Why Apply Today -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">What Sets Carol Royse Team Apart?</h2>
-        <p class="text-lg text-gray-600">
-          Most real estate teams promise leads. We provide <span class="font-bold text-brand-600">appointments</span>. There's a massive difference.
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Why You Should Apply Today</h2>
+        <p class="text-lg text-gray-600 text-center mb-12">
+          This opportunity is not for everyone. We are only looking for 5 licensed agents who have sold at least five homes in the past year.
         </p>
-      </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div class="border-2 border-red-200 rounded-2xl p-8 bg-red-50">
-          <h3 class="text-xl font-bold text-red-700 mb-4 flex items-center gap-2">
-            <i class="fas fa-times-circle"></i> Other Teams Give You
-          </h3>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-center gap-2">
-              <i class="fas fa-times text-red-500"></i> Cold lead lists
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-times text-red-500"></i> Outdated contact info
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-times text-red-500"></i> "Figure it out yourself" training
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-times text-red-500"></i> Monthly marketing fees
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-times text-red-500"></i> No income guarantee
-            </li>
-          </ul>
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+            <h3 class="font-bold text-red-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-times-circle"></i> This is NOT for you if:
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li>• You are new agent, with no experience</li>
+              <li>• You struggle with self-discipline and drive</li>
+              <li>• You're looking for an easy paycheck without putting in the effort</li>
+            </ul>
+          </div>
+
+          <div class="bg-brand-50 rounded-xl p-6 border border-brand-100">
+            <h3 class="font-bold text-brand-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-check-circle"></i> This IS for you if:
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li>• You've closed at least five homes in the past year</li>
+              <li>• You're ready to break into the top 5%</li>
+              <li>• You're serious about building a high-income, high-performance real estate career</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="border-2 border-brand-200 rounded-2xl p-8 bg-brand-50">
-          <h3 class="text-xl font-bold text-brand-700 mb-4 flex items-center gap-2">
-            <i class="fas fa-check-circle"></i> Carol Royse Team Gives You
-          </h3>
-          <ul class="space-y-3 text-gray-700">
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check text-brand-600"></i> Pre-qualified appointments
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check text-brand-600"></i> Clients ready to buy/sell now
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check text-brand-600"></i> Elite training & mentorship
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check text-brand-600"></i> Zero marketing costs
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fas fa-check text-brand-600"></i> <strong>$100K+ income guarantee</strong>
-            </li>
-          </ul>
+        <div class="text-center">
+          <p class="text-lg text-gray-700 mb-8">
+            If you're serious about building a high-income, high-performance real estate career—one where you're given all the tools, clients, and support you need to thrive—then I want to hear from you.
+          </p>
         </div>
       </div>
     </div>
@@ -329,13 +432,11 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-6">Meet Carol Royse, Leader of Arizona's Top Real Estate Team</h2>
           
           <p class="text-gray-300 text-lg mb-6">
-            For years, Carol Royse Team has been the #1 real estate team in Arizona. We've helped thousands of buyers and sellers, 
-            closed more deals than any other team in the state, and built a reputation for excellence.
+            For years, Carol Royse Team has been the #1 real estate team in Arizona. We've helped over 6,000+ buyers and sellers, closed more deals than any other team in the state, and built a reputation for excellence.
           </p>
           
           <p class="text-gray-300 text-lg mb-8">
-            The agents on our team don't just succeed—they dominate. They sell more homes, make more money, 
-            and have more control over their careers than they ever thought possible.
+            The agents on my team don't just succeed—they dominate. They sell more homes, make more money, and have more control over their careers than they ever thought possible.
           </p>
 
           <div class="grid grid-cols-3 gap-6">
@@ -344,8 +445,8 @@
               <p class="text-gray-400 text-sm">Team in Arizona</p>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-brand-400">1000s</div>
-              <p class="text-gray-400 text-sm">Happy Clients</p>
+              <div class="text-3xl font-bold text-brand-400">6,000+</div>
+              <p class="text-gray-400 text-sm">Buyers & Sellers Helped</p>
             </div>
             <div class="text-center">
               <div class="text-3xl font-bold text-brand-400">$100K+</div>
@@ -357,6 +458,29 @@
         <div class="relative">
           <div class="absolute inset-0 bg-brand-500 rounded-3xl transform rotate-3 opacity-20"></div>
           <img src="images/carol-royse.jpg" alt="Carol Royse - Arizona's #1 Real Estate Team Leader" class="relative rounded-3xl shadow-2xl w-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial 3 -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+        <div class="text-brand-600 text-4xl mb-6">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <blockquote class="text-xl md:text-2xl text-gray-900 mb-6 italic leading-relaxed">
+          "For the last 6 or 7 years, I've averaged anywhere from 45 to 65 homes a year. I speak with other agents, and they say, 'That's impossible, you can't do it.' And I say, 'You're absolutely right—you can't do it on your own.' That's why the team works."
+        </blockquote>
+        <div class="flex items-center justify-center gap-4">
+          <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-user text-brand-600"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-gray-900">Robert Carello</p>
+            <p class="text-gray-500 text-sm">Top Producer, Carol Royse Team</p>
+          </div>
         </div>
       </div>
     </div>
@@ -381,14 +505,15 @@
           <span class="text-brand-600">I will personally cut you a check for the difference.</span>
         </p>
         <p class="text-gray-600">
-          No other brokerage will offer you this. Because they can't. But we can, because we know our system works.
+          No other brokerage will offer you this. Because they can't. But I can, because I know our system works.
         </p>
       </div>
       
       <button onclick="openModal()" class="inline-flex items-center gap-2 bg-white text-brand-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition cursor-pointer">
         <i class="fas fa-rocket"></i>
-        Apply Now - Limited Spots Available
+        See If I Qualify
       </button>
+      <p class="text-brand-200 mt-4">See if our team is the right fit for you</p>
     </div>
   </section>
 
@@ -398,47 +523,41 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Take the Next Step Toward a High-Performance Career</h2>
       
       <p class="text-lg text-gray-600 mb-8">
-        This opportunity is not for everyone. We are only looking for licensed agents who have sold at least five homes in the past year 
-        and are ready to take their career to the next level.
+        If you've sold at least five homes in the past year and you're ready to:
       </p>
 
-      <div class="grid md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
-        <div class="bg-red-50 rounded-xl p-6 text-left">
-          <h3 class="font-bold text-red-700 mb-3 flex items-center gap-2">
-            <i class="fas fa-times-circle"></i> This is NOT for you if:
-          </h3>
-          <ul class="space-y-2 text-gray-700 text-sm">
-            <li>• You're a new agent with no experience</li>
-            <li>• You're looking for an easy paycheck without effort</li>
-            <li>• You prefer working alone without support</li>
-          </ul>
+      <div class="grid md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto text-left">
+        <div class="flex items-center gap-3 text-gray-700">
+          <i class="fas fa-check text-brand-600"></i>
+          <span>Stop chasing leads and start closing more deals</span>
         </div>
-
-        <div class="bg-brand-50 rounded-xl p-6 text-left">
-          <h3 class="font-bold text-brand-700 mb-3 flex items-center gap-2">
-            <i class="fas fa-check-circle"></i> This IS for you if:
-          </h3>
-          <ul class="space-y-2 text-gray-700 text-sm">
-            <li>• You've closed 5+ homes in the past year</li>
-            <li>• You're ready to break into the top 5%</li>
-            <li>• You want a proven system and support</li>
-          </ul>
+        <div class="flex items-center gap-3 text-gray-700">
+          <i class="fas fa-check text-brand-600"></i>
+          <span>Eliminate marketing costs and unpredictable income</span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-700">
+          <i class="fas fa-check text-brand-600"></i>
+          <span>Join a proven, high-performance system</span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-700">
+          <i class="fas fa-check text-brand-600"></i>
+          <span>Earn $100K+ in your first year, guaranteed</span>
         </div>
       </div>
 
+      <p class="text-xl text-gray-700 mb-8">
+        Then now is the time to take action. This is your opportunity to finally take control of your career, your income, and your future. And it's only available for 5 agents.
+      </p>
+
       <div class="bg-gray-900 rounded-3xl p-8 md:p-12">
-        <h3 class="text-2xl font-bold text-white mb-6">Ready to earn $100K+ in your first year?</h3>
-        
-        <p class="text-gray-300 mb-8">Join the top 5% of real estate agents. Limited spots available.</p>
+        <h3 class="text-2xl font-bold text-white mb-4">The top 5% of agents earn six figures or more.</h3>
+        <p class="text-xl text-brand-400 font-bold mb-8">Are you ready to be one of them?</p>
         
         <button onclick="openModal()" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition cursor-pointer">
           <i class="fas fa-rocket mr-2"></i>
-          Apply Now - See If You're A Fit
+          See If I Qualify
         </button>
-        
-        <p class="text-gray-400 text-sm mt-6">
-          Only 5 spots available. Apply today to secure your spot.
-        </p>
+        <p class="text-gray-500 mt-4">See if our team is the right fit for you</p>
       </div>
     </div>
   </section>
@@ -462,19 +581,13 @@
 
   <!-- Application Modal -->
   <div id="applyModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <!-- Backdrop -->
     <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-    
-    <!-- Modal Panel -->
     <div class="fixed inset-0 z-10 overflow-y-auto">
       <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
         <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-          <!-- Close Button -->
           <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
             <i class="fas fa-times text-xl"></i>
           </button>
-          
-          <!-- Modal Content -->
           <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
             <div class="text-center mb-6">
               <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100 mb-4">
@@ -483,7 +596,6 @@
               <h3 class="text-2xl font-bold text-gray-900" id="modal-title">See If You're a Fit</h3>
               <p class="text-gray-600 mt-2" id="modal-subtitle">Apply to join Arizona's #1 Real Estate Team. $100K+ guaranteed.</p>
             </div>
-            
             <form id="applicationForm" class="space-y-4">
               <div>
                 <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
@@ -491,21 +603,18 @@
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
                   placeholder="John Smith">
               </div>
-              
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                 <input type="email" id="email" name="email" required 
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
                   placeholder="john@example.com">
               </div>
-              
               <div>
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
                 <input type="tel" id="phone" name="phone" required 
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
                   placeholder="(555) 123-4567">
               </div>
-              
               <div>
                 <label for="homesClosed" class="block text-sm font-medium text-gray-700 mb-1">Homes Closed in Past 12 Months *</label>
                 <input type="number" id="homesClosed" name="homesClosed" required min="0"
@@ -513,21 +622,17 @@
                   placeholder="5">
                 <p class="text-xs text-gray-500 mt-1">Minimum 5 homes closed required</p>
               </div>
-              
               <div class="bg-gray-50 rounded-lg p-4">
                 <label class="flex items-start gap-3 cursor-pointer">
                   <input type="checkbox" id="optIn" name="optIn" required class="mt-1 h-5 w-5 rounded border-gray-300 text-brand-600 focus:ring-brand-500">
                   <span class="text-sm text-gray-700">
-                    I agree to receive calls and text messages from Carol Royse Team regarding my application. 
-                    Message and data rates may apply. Reply STOP to opt out.
+                    I agree to receive calls and text messages from Carol Royse Team regarding my application. Message and data rates may apply. Reply STOP to opt out.
                   </span>
                 </label>
               </div>
-              
               <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition">
                 Submit Application
               </button>
-              
               <p class="text-xs text-gray-500 text-center">
                 By submitting, you agree to our privacy policy and terms of service.
               </p>
@@ -553,14 +658,12 @@
       document.body.style.overflow = '';
     }
     
-    // Close on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
       }
     });
     
-    // Form submission to Lofty via Cloudflare Worker
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
@@ -578,8 +681,6 @@
       };
       
       try {
-        // Send to Lofty via Cloudflare Worker
-        // TODO: Replace with your actual Worker URL after deployment
         const response = await fetch('https://carol-royse-recruiting.your-subdomain.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -594,11 +695,8 @@
           form.reset();
         } else {
           alert('There was an error submitting your application. Please try again or call us directly.');
-          console.error('Submission error:', result);
         }
       } catch (error) {
-        console.error('Network error:', error);
-        // Fallback: Show success anyway, data is logged
         alert('Thank you for your application! We will review your information and contact you within 24 hours.');
         closeModal();
         form.reset();
@@ -608,13 +706,11 @@
       }
     });
     
-    // ===== AUTO-POPUP TRIGGERS =====
-    // Only show if user hasn't already interacted
-    
+    // Auto-popup triggers
     const POPUP_SETTINGS = {
-      timeDelay: 30000,        // 30 seconds
-      scrollPercent: 50,       // 50% of page
-      exitIntentDelay: 3000,   // 3 seconds before exit intent works
+      timeDelay: 30000,
+      scrollPercent: 50,
+      exitIntentDelay: 3000,
       showOncePerSession: true
     };
     
@@ -622,17 +718,14 @@
     let hasInteracted = false;
     let exitIntentEnabled = false;
     
-    // Mark as interacted when clicking any CTA
     document.querySelectorAll('button[onclick="openModal()"]').forEach(btn => {
       btn.addEventListener('click', () => {
         hasInteracted = true;
-        // Reset to manual trigger text
         document.getElementById('modal-title').textContent = "See If You're a Fit";
         document.getElementById('modal-subtitle').textContent = "Apply to join Arizona's #1 Real Estate Team. $100K+ guaranteed.";
       });
     });
     
-    // Check if we should show popup
     function shouldShowPopup() {
       if (hasInteracted) return false;
       if (POPUP_SETTINGS.showOncePerSession && hasShownPopup) return false;
@@ -640,13 +733,6 @@
       return true;
     }
     
-    // Set auto-popup text
-    function setAutoPopupText() {
-      document.getElementById('modal-title').textContent = "Wait! Don't Miss This";
-      document.getElementById('modal-subtitle').textContent = "Only 5 spots available. Join Arizona's #1 team with $100K+ guaranteed.";
-    }
-    
-    // Mark popup as shown
     function markPopupShown() {
       hasShownPopup = true;
       if (POPUP_SETTINGS.showOncePerSession) {
@@ -654,7 +740,11 @@
       }
     }
     
-    // 1. TIME DELAY POPUP (30 seconds)
+    function setAutoPopupText() {
+      document.getElementById('modal-title').textContent = "Wait! Don't Miss This";
+      document.getElementById('modal-subtitle').textContent = "Only 5 spots available. Join Arizona's #1 team with $100K+ guaranteed.";
+    }
+    
     setTimeout(() => {
       if (shouldShowPopup()) {
         setAutoPopupText();
@@ -663,13 +753,10 @@
       }
     }, POPUP_SETTINGS.timeDelay);
     
-    // 2. SCROLL TRIGGER (50% of page)
     let scrollTriggered = false;
     window.addEventListener('scroll', () => {
       if (scrollTriggered) return;
-      
       const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      
       if (scrollPercent >= POPUP_SETTINGS.scrollPercent && shouldShowPopup()) {
         scrollTriggered = true;
         setAutoPopupText();
@@ -678,26 +765,14 @@
       }
     });
     
-    // 3. EXIT INTENT (mouse leaving viewport upward)
-    setTimeout(() => {
-      exitIntentEnabled = true;
-    }, POPUP_SETTINGS.exitIntentDelay);
+    setTimeout(() => { exitIntentEnabled = true; }, POPUP_SETTINGS.exitIntentDelay);
     
     document.addEventListener('mouseout', (e) => {
       if (!exitIntentEnabled) return;
       if (!shouldShowPopup()) return;
-      
-      // Check if mouse is leaving the viewport (top of page)
       if (e.clientY < 10 && e.relatedTarget === null) {
         setAutoPopupText();
         openModal();
-        markPopupShown();
-      }
-    });
-    
-    // Mark as shown when modal opens
-    modal.addEventListener('transitionend', () => {
-      if (!modal.classList.contains('hidden')) {
         markPopupShown();
       }
     });
