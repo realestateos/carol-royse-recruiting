@@ -36,7 +36,14 @@ export default {
       const source = data.source || 'Carol Royse Recruiting Website';
 
       // Send to Slack
-      await sendSlackNotification(data, fullName, source, env);
+      if (env.SLACK_WEBHOOK_URL) {
+        await sendSlackNotification(data, fullName, source, env);
+      }
+
+      // Send to Zapier
+      if (env.ZAPIER_WEBHOOK_URL) {
+        await sendToZapier(data, fullName, source, env);
+      }
 
       // Optional: Send to Lofty CRM
       if (env.LOFTY_API_KEY) {
@@ -154,6 +161,42 @@ async function sendSlackNotification(data, fullName, source, env) {
     }
   } catch (e) {
     console.error('Slack notification error:', e);
+  }
+}
+
+// Send to Zapier
+async function sendToZapier(data, fullName, source, env) {
+  try {
+    const payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      fullName: fullName,
+      email: data.email,
+      phone: data.phone,
+      brokerage: data.brokerage || '',
+      homesClosed: data.homesClosed || '0',
+      mlsId: data.mlsId || '',
+      optIn: data.optIn || false,
+      source: source,
+      submittedAt: new Date().toISOString(),
+      submittedAtFormatted: new Date().toLocaleString('en-US', {
+        timeZone: 'America/Phoenix',
+        dateStyle: 'full',
+        timeStyle: 'short'
+      })
+    };
+
+    const response = await fetch(env.ZAPIER_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      console.error('Zapier webhook failed:', await response.text());
+    }
+  } catch (e) {
+    console.error('Zapier send failed:', e);
   }
 }
 
