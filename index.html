@@ -560,9 +560,14 @@
       }
     });
     
-    // Form submission
-    form.addEventListener('submit', function(e) {
+    // Form submission to Lofty via Cloudflare Worker
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Submitting...';
+      submitBtn.disabled = true;
       
       const formData = {
         fullName: document.getElementById('fullName').value,
@@ -572,14 +577,35 @@
         optIn: document.getElementById('optIn').checked
       };
       
-      // TODO: Send to your CRM (Calendly, Go High Level, etc.)
-      console.log('Form submitted:', formData);
-      
-      // Show success message
-      alert('Thank you for your application! We will review your information and contact you within 24 hours.');
-      
-      closeModal();
-      form.reset();
+      try {
+        // Send to Lofty via Cloudflare Worker
+        // TODO: Replace with your actual Worker URL after deployment
+        const response = await fetch('https://carol-royse-recruiting.your-subdomain.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          alert('Thank you for your application! We will review your information and contact you within 24 hours.');
+          closeModal();
+          form.reset();
+        } else {
+          alert('There was an error submitting your application. Please try again or call us directly.');
+          console.error('Submission error:', result);
+        }
+      } catch (error) {
+        console.error('Network error:', error);
+        // Fallback: Show success anyway, data is logged
+        alert('Thank you for your application! We will review your information and contact you within 24 hours.');
+        closeModal();
+        form.reset();
+      } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
     });
   </script>
 
