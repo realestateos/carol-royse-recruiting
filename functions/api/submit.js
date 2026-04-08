@@ -1,19 +1,13 @@
 // Cloudflare Pages Function: /api/submit
-// Handles form submissions and sends to Slack + Zapier
+// Temporarily hardcoded webhooks for testing
+
+const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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';
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/21403704/u7m1nbx/';
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
-  
-  // Debug: Check if env vars are set
-  const hasSlack = !!env.SLACK_WEBHOOK_URL;
-  const hasZapier = !!env.ZAPIER_WEBHOOK_URL;
-  
-  console.log('Env vars check:', { hasSlack, hasZapier });
-  
   try {
-    const data = await request.json();
+    const data = await context.request.json();
     
-    // Validate
     if (!data.firstName || !data.lastName || !data.email || !data.phone) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
@@ -22,65 +16,39 @@ export async function onRequestPost(context) {
     }
     
     const fullName = `${data.firstName} ${data.lastName}`;
-    const source = data.source || 'Carol Royse Recruiting Website';
-    
-    const payload = {
-      ...data,
-      fullName,
-      source,
-      submittedAt: new Date().toISOString()
-    };
     
     // Send to Slack
-    if (env.SLACK_WEBHOOK_URL) {
-      try {
-        const slackPayload = {
-          text: `🎯 New Agent: ${fullName}`,
-          blocks: [
-            {
-              type: 'section',
-              fields: [
-                { type: 'mrkdwn', text: `*Name:*\n${fullName}` },
-                { type: 'mrkdwn', text: `*Email:*\n${data.email}` },
-                { type: 'mrkdwn', text: `*Phone:*\n${data.phone}` },
-                { type: 'mrkdwn', text: `*Homes:*\n${data.homesClosed || '0'}` }
-              ]
-            }
-          ]
-        };
-        
-        const slackRes = await fetch(env.SLACK_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(slackPayload)
-        });
-        
-        console.log('Slack response:', slackRes.status);
-      } catch (e) {
-        console.error('Slack error:', e);
-      }
-    }
+    await fetch(SLACK_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: `🎯 New Agent Application`,
+        blocks: [
+          {
+            type: 'section',
+            fields: [
+              { type: 'mrkdwn', text: `*Name:*\n${fullName}` },
+              { type: 'mrkdwn', text: `*Email:*\n${data.email}` },
+              { type: 'mrkdwn', text: `*Phone:*\n${data.phone}` },
+              { type: 'mrkdwn', text: `*Homes:*\n${data.homesClosed || '0'}` }
+            ]
+          }
+        ]
+      })
+    });
     
     // Send to Zapier
-    if (env.ZAPIER_WEBHOOK_URL) {
-      try {
-        const zapierRes = await fetch(env.ZAPIER_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        
-        console.log('Zapier response:', zapierRes.status);
-      } catch (e) {
-        console.error('Zapier error:', e);
-      }
-    }
+    await fetch(ZAPIER_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...data,
+        fullName,
+        submittedAt: new Date().toISOString()
+      })
+    });
     
-    return new Response(JSON.stringify({ 
-      success: true, 
-      message: 'Application submitted',
-      debug: { hasSlack, hasZapier }
-    }), {
+    return new Response(JSON.stringify({ success: true, message: 'Application submitted' }), {
       headers: { 
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
@@ -88,11 +56,7 @@ export async function onRequestPost(context) {
     });
     
   } catch (error) {
-    console.error('Function error:', error);
-    return new Response(JSON.stringify({ 
-      error: 'Internal error',
-      message: error.message 
-    }), {
+    return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
