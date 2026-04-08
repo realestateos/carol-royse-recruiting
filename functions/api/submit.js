@@ -1,9 +1,14 @@
 // Cloudflare Pages Function: /api/submit
 // Handles form submissions and sends to Slack + Zapier
-// Webhooks are stored in Cloudflare environment variables (secure)
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  
+  // Debug: Check if env vars are set
+  const hasSlack = !!env.SLACK_WEBHOOK_URL;
+  const hasZapier = !!env.ZAPIER_WEBHOOK_URL;
+  
+  console.log('Env vars check:', { hasSlack, hasZapier });
   
   try {
     const data = await request.json();
@@ -19,36 +24,62 @@ export async function onRequestPost(context) {
     const fullName = `${data.firstName} ${data.lastName}`;
     const source = data.source || 'Carol Royse Recruiting Website';
     
-    // Build payload
     const payload = {
       ...data,
       fullName,
       source,
-      submittedAt: new Date().toISOString(),
-      submittedAtFormatted: new Date().toLocaleString('en-US', {
-        timeZone: 'America/Phoenix',
-        dateStyle: 'full',
-        timeStyle: 'short'
-      })
+      submittedAt: new Date().toISOString()
     };
     
-    // Send to Slack (if configured)
+    // Send to Slack
     if (env.SLACK_WEBHOOK_URL) {
-      await sendToSlack(payload, env);
+      try {
+        const slackPayload = {
+          text: `🎯 New Agent: ${fullName}`,
+          blocks: [
+            {
+              type: 'section',
+              fields: [
+                { type: 'mrkdwn', text: `*Name:*\n${fullName}` },
+                { type: 'mrkdwn', text: `*Email:*\n${data.email}` },
+                { type: 'mrkdwn', text: `*Phone:*\n${data.phone}` },
+                { type: 'mrkdwn', text: `*Homes:*\n${data.homesClosed || '0'}` }
+              ]
+            }
+          ]
+        };
+        
+        const slackRes = await fetch(env.SLACK_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(slackPayload)
+        });
+        
+        console.log('Slack response:', slackRes.status);
+      } catch (e) {
+        console.error('Slack error:', e);
+      }
     }
     
-    // Send to Zapier (if configured)
+    // Send to Zapier
     if (env.ZAPIER_WEBHOOK_URL) {
-      await fetch(env.ZAPIER_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      try {
+        const zapierRes = await fetch(env.ZAPIER_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        console.log('Zapier response:', zapierRes.status);
+      } catch (e) {
+        console.error('Zapier error:', e);
+      }
     }
     
     return new Response(JSON.stringify({ 
       success: true, 
-      message: 'Application submitted' 
+      message: 'Application submitted',
+      debug: { hasSlack, hasZapier }
     }), {
       headers: { 
         'Content-Type': 'application/json',
@@ -68,7 +99,6 @@ export async function onRequestPost(context) {
   }
 }
 
-// Handle CORS preflight
 export async function onRequestOptions() {
   return new Response(null, {
     headers: {
@@ -76,55 +106,5 @@ export async function onRequestOptions() {
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     }
-  });
-}
-
-async function sendToSlack(data, env) {
-  const slackPayload = {
-    text: `🎯 New Agent Application - ${data.source}`,
-    blocks: [
-      {
-        type: 'header',
-        text: { type: 'plain_text', text: '🎯 New Agent Application', emoji: true }
-      },
-      {
-        type: 'section',
-        fields: [
-          { type: 'mrkdwn', text: `*Name:*\n${data.fullName}` },
-          { type: 'mrkdwn', text: `*Source:*\n${data.source}` },
-          { type: 'mrkdwn', text: `*Email:*\n${data.email}` },
-          { type: 'mrkdwn', text: `*Phone:*\n${data.phone}` },
-          { type: 'mrkdwn', text: `*Brokerage:*\n${data.brokerage || 'N/A'}` },
-          { type: 'mrkdwn', text: `*Homes Closed:*\n${data.homesClosed || '0'}` }
-        ]
-      },
-      {
-        type: 'context',
-        elements: [
-          { type: 'mrkdwn', text: `📝 MLS: ${data.mlsId || 'N/A'} | Opt-in: ${data.optIn ? '✅' : '❌'}` }
-        ]
-      },
-      {
-        type: 'actions',
-        elements: [
-          {
-            type: 'button',
-            text: { type: 'plain_text', text: '📧 Email', emoji: true },
-            url: `mailto:${data.email}`
-          },
-          {
-            type: 'button',
-            text: { type: 'plain_text', text: '📱 Call', emoji: true },
-            url: `tel:${data.phone}`
-          }
-        ]
-      }
-    ]
-  };
-
-  await fetch(env.SLACK_WEBHOOK_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(slackPayload)
   });
 }
